@@ -11,9 +11,15 @@ public class Basket {
     private int totalCapacity = DEFAULT_CAPACITY;
     private double maxInputWeight = DEFAULT_MAX_WEIGHT;
     private List<Ball> balls;
-
-    public Basket(int totalCapacity, double maxInputWeight) {   //дилит
+    // TODO: 19.06.2020 add delete
+    public Basket(int totalCapacity, double maxInputWeight) {
         balls = new ArrayList<Ball>(totalCapacity);
+        this.totalCapacity = totalCapacity;
+        this.maxInputWeight = maxInputWeight;
+    }
+
+    public Basket(List<Ball> balls, int totalCapacity, double maxInputWeight) {
+        this.balls = balls;
         this.totalCapacity = totalCapacity;
         this.maxInputWeight = maxInputWeight;
     }
@@ -46,7 +52,7 @@ public class Basket {
         return totalCapacity;
     }
 
-    public void setTotalCapacity(Integer totalCapacity) {
+    public void setTotalCapacity(int totalCapacity) {
         this.totalCapacity = totalCapacity;
     }
 
@@ -86,7 +92,7 @@ public class Basket {
         result = 31 * result + totalCapacity;
         result = 31 * result + Double.valueOf(maxInputWeight).hashCode();
         if (balls != null)
-            result = 17 * result + balls.hashCode();
+            result = 31 * result + balls.hashCode();
         return result;
     }
 

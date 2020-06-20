@@ -1,4 +1,4 @@
-package com.anton.day3.validator;
+package com.anton.day3.parser;
 
 import com.anton.day3.exception.BasketValidatorException;
 import org.testng.annotations.BeforeClass;
@@ -8,18 +8,18 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
-public class BasketValidatorTest {
-    public static BasketValidator validator;
+public class BasketParserTest {
+    public static BasketParser parser;
 
     @BeforeClass
     public static void setup() {
-        validator = new BasketValidator();
+        parser = new BasketParser();
     }
 
     @Test
     public void validateWeightValidTest() {
         try {
-            double expectedWeight = validator.validateWeight("100");
+            double expectedWeight = parser.parseWeight("100");
             int actualWeight = 100;
             assertEquals(expectedWeight, actualWeight);
         } catch (BasketValidatorException ex) {
@@ -36,13 +36,13 @@ public class BasketValidatorTest {
 
     @Test(expectedExceptions = BasketValidatorException.class, dataProvider = "invalidWeight")
     public void validateWeightExceptionTest(String expectedWeight) throws BasketValidatorException {
-        validator.validateWeight(expectedWeight);
+        parser.parseWeight(expectedWeight);
     }
 
     @Test
     public void validateCapacityValidTest() {
         try {
-            int expectedColor = validator.validateCapacity("15");
+            int expectedColor = parser.parseCapacity("15");
             int actualCapacity = 15;
             assertEquals(expectedColor, actualCapacity);
         } catch (BasketValidatorException ex) {
@@ -59,6 +59,6 @@ public class BasketValidatorTest {
 
     @Test(expectedExceptions = BasketValidatorException.class, dataProvider = "invalidCapacity")
     public void validateCapacityExceptionTest(String capacity) throws BasketValidatorException {
-        validator.validateCapacity(capacity);
+        parser.parseCapacity(capacity);
     }
 }

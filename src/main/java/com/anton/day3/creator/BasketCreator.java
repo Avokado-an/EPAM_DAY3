@@ -2,13 +2,13 @@ package com.anton.day3.creator;
 
 import com.anton.day3.entity.Basket;
 import com.anton.day3.exception.BasketValidatorException;
-import com.anton.day3.validator.BasketValidator;
+import com.anton.day3.parser.BasketParser;
 
 public class BasketCreator {
     public Basket createBasket(String totalCapacity, String totalWeight) throws BasketValidatorException {
-        BasketValidator validator = new BasketValidator();
-        int capacity = validator.validateCapacity(totalCapacity);
-        double weight = validator.validateWeight(totalWeight);
+        BasketParser parser = new BasketParser();
+        int capacity = parser.parseCapacity(totalCapacity);
+        double weight = parser.parseWeight(totalWeight);
         return new Basket(capacity, weight);
     }
 }

@@ -1,16 +1,16 @@
-package com.anton.day3.validator;
+package com.anton.day3.parser;
 
 import com.anton.day3.entity.BallColor;
 import com.anton.day3.exception.BallValidatorException;
-import com.anton.day3.validator.parser.NumberParser;
+import com.anton.day3.validator.NumberValidator;
 
-public class BallValidator {
+public class BallParser {
     private static final double MAX_WEIGHT = 50;
     private static final double MIN_WEIGHT = 0;
 
-    public double validateWeight(String weight) throws BallValidatorException {
-        NumberParser parser = new NumberParser();
-        boolean isDouble = parser.isValidDouble(weight);
+    public double parseWeight(String weight) throws BallValidatorException {
+        NumberValidator validator = new NumberValidator();
+        boolean isDouble = validator.isValidDouble(weight);
         if (!isDouble) {
             throw new BallValidatorException();
         }
@@ -21,7 +21,7 @@ public class BallValidator {
         return res;
     }
 
-    public BallColor validateColor(String color) throws BallValidatorException {
+    public BallColor parseColor(String color) throws BallValidatorException {
         if (color == null) {
             throw new BallValidatorException();
         }

@@ -1,24 +1,25 @@
-package com.anton.day3.validator.parser;
+package com.anton.day3.validator;
 
-public class NumberParser {
+public class NumberValidator {
     public boolean isValidInt(String number) {
+        boolean flag = true;
         try {
             Integer.parseInt(number);
-            return true;
         } catch (NumberFormatException e) {
-            return false;
+            flag = false;
         }
+        return flag;
     }
 
     public boolean isValidDouble(String number) {
-        if(number == null) {
-            return false;
-        }
+        boolean flag = true;
         try {
             Double.parseDouble(number);
-            return true;
         } catch (NumberFormatException e) {
-            return false;
+            flag = false;
+        } catch (NullPointerException e) {
+            flag = false;
         }
+        return flag;
     }
 }

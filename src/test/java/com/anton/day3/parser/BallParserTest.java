@@ -1,4 +1,4 @@
-package com.anton.day3.validator;
+package com.anton.day3.parser;
 
 import com.anton.day3.entity.BallColor;
 import com.anton.day3.exception.BallValidatorException;
@@ -9,18 +9,18 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
-public class BallValidatorTest {
-    public static BallValidator validator;
+public class BallParserTest {
+    public static BallParser parser;
 
     @BeforeClass
     public static void setup() {
-        validator = new BallValidator();
+        parser = new BallParser();
     }
 
     @Test
     public void validateWeightValidTest() {
         try {
-            double expectedWeight = validator.validateWeight("15");
+            double expectedWeight = parser.parseWeight("15");
             int actualWeight = 15;
             assertEquals(expectedWeight, actualWeight);
         } catch (BallValidatorException ex) {
@@ -37,13 +37,13 @@ public class BallValidatorTest {
 
     @Test(expectedExceptions = BallValidatorException.class, dataProvider = "invalidWeight")
     public void validateWeightExceptionTest(String expectedWeight) throws BallValidatorException {
-        validator.validateWeight(expectedWeight);
+        parser.parseWeight(expectedWeight);
     }
 
     @Test
     public void validateColorValidTest() {
         try {
-            BallColor expectedBallColor = validator.validateColor("yellow");
+            BallColor expectedBallColor = parser.parseColor("yellow");
             BallColor actualBallColor = BallColor.YELLOW;
             assertEquals(expectedBallColor, actualBallColor);
         } catch (BallValidatorException ex) {
@@ -60,6 +60,6 @@ public class BallValidatorTest {
 
     @Test(expectedExceptions = BallValidatorException.class, dataProvider = "invalidColor")
     public void validateColorExceptionTest(String color) throws BallValidatorException {
-        validator.validateColor(color);
+        parser.parseColor(color);
     }
 }

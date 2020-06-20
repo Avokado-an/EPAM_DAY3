@@ -9,9 +9,6 @@ public class Ball {
         this.ballColor = ballColor;
     }
 
-    public Ball() {
-    }
-
     public double getWeight() {
         return weight;
     }

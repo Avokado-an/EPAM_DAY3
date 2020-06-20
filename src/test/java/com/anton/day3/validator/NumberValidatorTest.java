@@ -1,6 +1,5 @@
-package com.anton.day3.parser;
+package com.anton.day3.validator;
 
-import com.anton.day3.validator.parser.NumberParser;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -8,12 +7,12 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class NumberParserTest {
-    public static NumberParser parser;
+public class NumberValidatorTest {
+    public static NumberValidator parser;
 
     @BeforeClass
     public static void setup() {
-        parser = new NumberParser();
+        parser = new NumberValidator();
     }
 
     @Test

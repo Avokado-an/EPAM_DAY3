@@ -1,18 +1,18 @@
-package com.anton.day3.validator;
+package com.anton.day3.parser;
 
 import com.anton.day3.exception.BasketValidatorException;
-import com.anton.day3.validator.parser.NumberParser;
+import com.anton.day3.validator.NumberValidator;
 
-public class BasketValidator {
+public class BasketParser {
     private static final int MAX_CAPACITY = 50;
     private static final int MIN_CAPACITY = 0;
     private static final double MAX_INPUT_WEIGHT = 1000;
     private static final double MIN_INPUT_WEIGHT = 0;
 
-    private NumberParser parser = new NumberParser();
+    private NumberValidator validator = new NumberValidator();
 
-    public Integer validateCapacity(String capacity) throws BasketValidatorException {
-        boolean isInt = parser.isValidInt(capacity);
+    public int parseCapacity(String capacity) throws BasketValidatorException {
+        boolean isInt = validator.isValidInt(capacity);
         if (!isInt) {
             throw new BasketValidatorException();
         }
@@ -23,8 +23,8 @@ public class BasketValidator {
         return proposedCapacity;
     }
 
-    public double validateWeight(String weight) throws BasketValidatorException {
-        boolean isDouble = parser.isValidDouble(weight);
+    public double parseWeight(String weight) throws BasketValidatorException {
+        boolean isDouble = validator.isValidDouble(weight);
         if (!isDouble) {
             throw new BasketValidatorException();
         }
