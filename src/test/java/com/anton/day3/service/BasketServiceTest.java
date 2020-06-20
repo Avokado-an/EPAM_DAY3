@@ -98,4 +98,31 @@ public class BasketServiceTest {
         int actualAmount = 3;
         assertNotEquals(expectedAmount, actualAmount);
     }
+
+    @Test
+    public void removeBallValidTest() {
+        int id = 0;
+        Basket basket = new Basket();
+        basket.addBall(new Ball(10, BallColor.GREEN));
+        boolean flag = service.removeBall(basket, id);
+        assertTrue(flag);
+    }
+
+    @DataProvider(name = "invalidBasketRemovalValue")
+    public static Object[][] createInvalidBasketRemovalValue() {
+        return new Object[][]{
+                {new Basket(Arrays.asList(
+                        new Ball(4, BallColor.YELLOW), new Ball(10, BallColor.BLUE),
+                        new Ball(15, BallColor.BLUE), new Ball(7, BallColor.GREEN), null)), 5},
+                {new Basket(Arrays.asList(
+                        new Ball(4, BallColor.YELLOW), new Ball(10, BallColor.BLUE), null)), -1},
+                {null, 5}
+        };
+    }
+
+    @Test(dataProvider = "invalidBasketRemovalValue")
+    public void removeBallInvalidTest(Basket basket, int id) {
+        boolean flag = service.removeBall(basket, id);
+        assertFalse(flag);
+    }
 }

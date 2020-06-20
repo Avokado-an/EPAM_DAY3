@@ -1,8 +1,8 @@
 package com.anton.day3.service;
 
 import com.anton.day3.entity.Ball;
-import com.anton.day3.entity.Basket;
 import com.anton.day3.entity.BallColor;
+import com.anton.day3.entity.Basket;
 
 public class BasketService {
     public boolean addBall(Basket basket, Ball ball) {
@@ -10,6 +10,16 @@ public class BasketService {
         if ((basket != null && ball != null) && (!isFull(basket) && !isTooHeavy(basket, ball))) {
             flag = true;
             basket.addBall(ball);
+        }
+        return flag;
+    }
+
+    public boolean removeBall(Basket basket, int id) {
+        boolean flag = false;
+        int minPositive = 0;
+        if (basket != null && (id >= minPositive && id < basket.getCurrentSize())) {
+            flag = true;
+            basket.removeBall(id);
         }
         return flag;
     }
