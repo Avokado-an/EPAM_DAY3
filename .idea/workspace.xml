@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cd0b5d-1516-4902-8485-1d1938e905eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/day3/service/BasketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/day3/service/BasketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/anton/day3/service/BasketServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/anton/day3/service/BasketServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/day3/creator/BallCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/day3/creator/BallCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/day3/creator/BasketCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/day3/creator/BasketCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/anton/day3/entity/Basket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/anton/day3/entity/Basket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anton/day3/entity/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anton/day3/entity/Basket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +174,7 @@
       <workItem from="1592552624297" duration="563000" />
       <workItem from="1592553208365" duration="9025000" />
       <workItem from="1592605972145" duration="270000" />
-      <workItem from="1592637003820" duration="2811000" />
+      <workItem from="1592637003820" duration="3552000" />
     </task>
     <servers />
   </component>

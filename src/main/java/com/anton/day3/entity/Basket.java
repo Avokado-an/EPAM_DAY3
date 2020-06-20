@@ -12,7 +12,6 @@ public class Basket {
     private double maxInputWeight = DEFAULT_MAX_WEIGHT;
     private List<Ball> balls;
 
-    // TODO: 19.06.2020 add delete
     public Basket(int totalCapacity, double maxInputWeight) {
         balls = new ArrayList<Ball>(totalCapacity);
         this.totalCapacity = totalCapacity;
